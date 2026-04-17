@@ -27,7 +27,7 @@ const ProductPreview = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8082/products/all/${productId}`)
+            .get(`${process.env.BASE_URL}/products/all/${productId}`)
             .then(async (res) => {
                 const {
                     _id,
@@ -65,7 +65,7 @@ const ProductPreview = () => {
         if (productDataLoaded) {
             const fetchSellerReviews = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:8082/review/sellerrating/${sellerId}`);
+                    const response = await axios.get(`${process.env.BASE_URL}/review/sellerrating/${sellerId}`);
                     setSellerReviews(response.data);
                 }
                 catch (error) {
@@ -79,7 +79,7 @@ const ProductPreview = () => {
 
     const getFullName = async (userId) => {
         try {
-            const response = await axios.get(`http://localhost:8082/fullname/${userId}`);
+            const response = await axios.get(`${process.env.BASE_URL}/fullname/${userId}`);
             return response.data.fullName;
         } catch (error) {
             console.error(error);
@@ -90,7 +90,7 @@ const ProductPreview = () => {
 
     const addToCart = async (productId, seller_id, p_name, p_image, price) => {
         try {
-            const response = await axios.put(`http://localhost:8082/add2cart/${id}`, {
+            const response = await axios.put(`${process.env.BASE_URL}/add2cart/${id}`, {
                 productId,
                 seller_id,
                 p_name,
@@ -117,7 +117,7 @@ const ProductPreview = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`http://localhost:8082/review/sellerrating/${id}`, {
+            const response = await axios.post(`${process.env.BASE_URL}/review/sellerrating/${id}`, {
                 data,
                 rating,
                 comment,

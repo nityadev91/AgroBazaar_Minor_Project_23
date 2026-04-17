@@ -19,7 +19,7 @@ function ProductList() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await axios.get('http://localhost:8082/products/all');
+        const response = await axios.get(`${process.env.BASE_URL}/products/all`);
         setVegs(response.data);
         setLoading(false);
       } catch (error) {
@@ -31,7 +31,7 @@ function ProductList() {
 
   const addToCart = async (productId, seller_id, p_name, p_image, price) => {
     try {
-      const response = await axios.put(`http://localhost:8082/add2cart/${id}`, {
+      const response = await axios.put(`${process.env.BASE_URL}/add2cart/${id}`, {
         productId,
         seller_id,
         p_name,

@@ -35,7 +35,7 @@ const MyProfile2 = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8082/auth/getUser/${email}`)
+            .get(`${process.env.BASE_URL}/auth/getUser/${email}`)
             .then((res) => {
                 setData({
                     _id: res.data._id,
@@ -220,7 +220,7 @@ const MyProfile2 = () => {
 
     const handleUpdateClick = async () => {
         try {
-            const response = await axios.put(`http://localhost:8082/auth/updateUser/${email}`, data, {
+            const response = await axios.put(`${process.env.BASE_URL}/auth/updateUser/${email}`, data, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

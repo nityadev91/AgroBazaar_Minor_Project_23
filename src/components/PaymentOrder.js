@@ -31,7 +31,7 @@ const PaymentOrder = () => {
         }
 
         axios
-            .get(`http://localhost:8082/add2cart/${id}`)
+            .get(`${process.env.BASE_URL}/add2cart/${id}`)
             .then((res) => {
                 setCart(res.data);
 
@@ -48,7 +48,7 @@ const PaymentOrder = () => {
             return;
         }
 
-        axios.put(`http://localhost:8082/order/new/${id}/${paymentData.paymentId}`, cart)
+        axios.put(`${process.env.BASE_URL}/order/new/${id}/${paymentData.paymentId}`, cart)
             .then((res) => {
                 //content
             })

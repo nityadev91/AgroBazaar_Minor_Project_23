@@ -15,7 +15,7 @@ const DeliveryClaimPage = ({ claimType }) => {
         console.log("Total With GST in DeliveryClaimPage:", totalWithGST);
         const fetchAddress = async () => {
             try {
-                const response = await axios.get(`http://localhost:8082/address/full/${id}`);
+                const response = await axios.get(`${process.env.BASE_URL}/address/full/${id}`);
                 const { address } = response.data;
                 setFullAddress(address);
             } catch (error) {
@@ -81,14 +81,14 @@ const DeliveryClaimPage = ({ claimType }) => {
                     <p className="mt-4 text-lg">Distance from Seller Address: {distance} kilometers</p>
                     {totalAmountPayable !== null && (<>
                         <p className="mt-4 text-lg">Total Amount Payable: ₹{totalAmountPayable.toFixed(2)}</p>
-                        <form action="http://localhost:8082/payment/pay" method="post">
+                        <form action={`${process.env.BASE_URL}/payment/pay`} method="post">
                             <input type="submit" value="PayPal" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded" />
                         </form>
                     </>
                     )}
                     {/* {claimType === "paid" && totalAmountPayable !== null && (<>
 
-                        <form action="http://localhost:8082/payment/pay" method="post">
+                        <form action="${process.env.BASE_URL}/payment/pay" method="post">
                             <input type="submit" value="PayPal" className="mt-4 bg-blue-500 text-white py-2 px-4 rounded" />
                         </form>
                     </>

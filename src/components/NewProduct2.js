@@ -53,7 +53,7 @@ const NewProduct1 = () => {
             const randomPartOfId = Math.floor(Math.random() * 10000);
             const productID = `${data.category}-${randomPartOfId}`;
             data.id = productID;
-            const response = await axios.put(`http://localhost:8082/products/new/${id}`, data, {
+            const response = await axios.put(`${process.env.BASE_URL}/products/new/${id}`, data, {
                 headers: {
                     'Content-Type': 'application/json',
                 },

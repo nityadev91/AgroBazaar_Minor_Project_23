@@ -15,7 +15,7 @@ const SellingHub = () => {
     useEffect(() => {
         try {
             axios
-                .get(`http://localhost:8082/products/${id}`)
+                .get(`${process.env.BASE_URL}/products/${id}`)
                 .then((res) => {
                     setVegs(res.data);
                 })
@@ -30,7 +30,7 @@ const SellingHub = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:8082/order/consumer_orders/${id}`)
+        axios.get(`${process.env.BASE_URL}/order/consumer_orders/${id}`)
             .then(response => {
                 setConsumerOrders(response.data);
             })
@@ -44,7 +44,7 @@ const SellingHub = () => {
 
         if (confirmed) {
             try {
-                await axios.delete(`http://localhost:8082/products/${id}/${itemId}`)
+                await axios.delete(`${process.env.BASE_URL}/products/${id}/${itemId}`)
                     .then((response) => {
                         console.log(response.data.message); // Should print "Product deleted successfully" if successful
                     })

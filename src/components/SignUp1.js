@@ -191,7 +191,7 @@ const Signup = () => {
     const submitForm = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://localhost:8082/auth/signup", {
+            const response = await fetch(`${process.env.BASE_URL}/auth/signup`, {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {

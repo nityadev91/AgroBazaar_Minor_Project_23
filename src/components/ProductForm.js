@@ -24,7 +24,7 @@ const CreateBook = (props) => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:8082/api/vegs', product)
+      .post(`${process.env.BASE_URL}/api/vegs`, product)
       .then((res) => {
         setProduct({
             name: "",

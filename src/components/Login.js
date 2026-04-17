@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:8082/auth/login", {
+    const response = await fetch(`${process.env.BASE_URL}/auth/login`, {
       method: "POST",
       crossDomain: true,
       headers: {

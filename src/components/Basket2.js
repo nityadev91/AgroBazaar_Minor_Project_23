@@ -17,14 +17,14 @@ const Basket2 = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8082/add2cart/${id}`)
+            .get(`${process.env.BASE_URL}/add2cart/${id}`)
             .then((res) => {
                 setCart(res.data);
                 // Fetch product details for each item in the cart
                 Promise.all(
                     res.data.map((item) =>
                         axios
-                            .get(`http://localhost:8082/products/all/${item._id}`)
+                            .get(`${process.env.BASE_URL}/products/all/${item._id}`)
                             .then((response) => ({
                                 [item._id]: response.data,
                             }))
@@ -56,7 +56,7 @@ const Basket2 = () => {
 
     const removeFromCart = (productId) => {
         axios
-            .delete(`http://localhost:8082/add2cart/${id}/remove/${productId}`)
+            .delete(`${process.env.BASE_URL}/add2cart/${id}/remove/${productId}`)
             .then((response) => {
                 console.log("Remove successfully!");
                 toast.success("Removed Item Successfully")
@@ -78,7 +78,7 @@ const Basket2 = () => {
     };
 
     const updateQuantity = async (productId, newQuantity) => {
-        axios.put(`http://localhost:8082/add2cart/${id}/update/${productId}/${newQuantity}`)
+        axios.put(`${process.env.BASE_URL}/add2cart/${id}/update/${productId}/${newQuantity}`)
             .then(response => {
                 const updatedCart = response.data;
                 setCart(updatedCart);

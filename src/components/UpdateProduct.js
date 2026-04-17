@@ -24,7 +24,7 @@ const UpdateProduct = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8082/products/all/${productId}`)
+            .get(`${process.env.BASE_URL}/products/all/${productId}`)
             .then((res) => {
                 setData({
                     _id: res.data._id,
@@ -72,7 +72,7 @@ const UpdateProduct = () => {
     const submitForm = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:8082/products/new/${id}`, data, {
+            const response = await axios.put(`${process.env.BASE_URL}/products/new/${id}`, data, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
