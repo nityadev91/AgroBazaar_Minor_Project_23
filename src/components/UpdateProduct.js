@@ -40,7 +40,7 @@ const UpdateProduct = () => {
             .catch((err) => {
                 console.log('Error from Update Product');
             });
-    }, [productId,isRefresh]);
+    }, [productId, isRefresh]);
 
     const handleChange = (event, property) => {
         setData({ ...data, [property]: event.target.value });
@@ -110,7 +110,7 @@ const UpdateProduct = () => {
                 <div className="space-y-12 border-b border-gray-900/10 pb-12 bg-indigo-400 rounded-lg p-6">
                     <div className="col-span-full">
                         <label
-                           htmlFor="username"
+                            htmlFor="username"
                             className="block text-sm font-medium leading-6 text-gray-900"
                         >
                             Name
@@ -225,7 +225,7 @@ const UpdateProduct = () => {
 
                 <div className="mt-6 flex items-center justify-end space-x-4">
                     <button
-                    onClick={handleEditCancel}
+                        onClick={handleEditCancel}
                         type="button"
                         className="text-sm font-semibold text-gray-600 hover:text-gray-800"
                     >

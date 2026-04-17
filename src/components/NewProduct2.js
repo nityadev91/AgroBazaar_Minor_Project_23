@@ -15,7 +15,7 @@ const NewProduct1 = () => {
         image: "",
         price: "",
         description: "",
-        quantity:""
+        quantity: ""
     });
 
     const handleChange = (event, property) => {
@@ -30,7 +30,7 @@ const NewProduct1 = () => {
             image: "",
             price: "",
             description: "",
-            quantity:""
+            quantity: ""
         });
     };
 

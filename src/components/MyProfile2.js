@@ -215,7 +215,7 @@ const MyProfile2 = () => {
     const handleEditCancel = () => {
         resetData();
         setIsRefresh(true);
-        setIsEditMode(false); 
+        setIsEditMode(false);
     };
 
     const handleUpdateClick = async () => {

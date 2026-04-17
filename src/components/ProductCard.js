@@ -5,7 +5,7 @@ import './ProductCard.css';
 const ProductCard = ({ product, addToCart }) => {
   const handleAddToCart = () => {
     console.log("Seller id:" + product.seller_id);
-    addToCart(product._id, product.seller_id, product.name,product.image, product.price);
+    addToCart(product._id, product.seller_id, product.name, product.image, product.price);
   };
 
   return (
@@ -21,7 +21,7 @@ const ProductCard = ({ product, addToCart }) => {
         </div>
         <div className="flex items-center justify-between mt-4">
           <div className="text-2xl font-bold text-black">₹{product.price}</div>
-          
+
 
           <button
             onClick={handleAddToCart}

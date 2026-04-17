@@ -1,45 +1,46 @@
-.header{
-    display:flex;
+.header {
+    display: flex;
     flex-direction: row;
     /* flex-grow: 2; */
     height: 60px;
     background-color: #228B22;
     justify-content: space-around;
     align-items: center;
-    font-size: larger;  
+    font-size: larger;
     box-sizing: border-box;
 }
 
-.logo{
+.logo {
     height: 75%;
 }
 
-.header a, .menu-button{
+.header a,
+.menu-button {
     text-decoration: none;
-    color:white;   
-    font-weight:500;
+    color: white;
+    font-weight: 500;
     align-items: center;
 }
 
-.search-box{
+.search-box {
     display: flex;
     flex-grow: 0;
-    height:70%;
-    background-color:inherit;
+    height: 70%;
+    background-color: inherit;
     box-sizing: border-box;
 }
 
-.search-box .input[type=text]{
+.search-box .input[type=text] {
     outline: none;
     box-sizing: border-box;
     width: 80%;
     height: 100%;
     padding-left: 15px;
     border: none;
-    font-size:medium;
+    font-size: medium;
 }
 
-.search-box .button{
+.search-box .button {
     box-sizing: border-box;
     width: 20%;
     height: 100%;
@@ -49,25 +50,26 @@
     color: #228B22;
 }
 
-.menu-button{
+.menu-button {
     height: inherit;
 }
 
-.menu-content{
-    display:flex;
-    flex-direction:column;
-    display:none;
-    top:45px;
-    position:absolute;
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    display: none;
+    top: 45px;
+    position: absolute;
     /* background-color: aqua;  */
-    border:1px solid red;
-}
-.menu:hover .menu-content{
-    display:block;
-    display:flex;
-    flex-direction:column;
+    border: 1px solid red;
 }
 
-.menu-content a{
+.menu:hover .menu-content {
+    display: block;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-content a {
     background-color: gray;
 }

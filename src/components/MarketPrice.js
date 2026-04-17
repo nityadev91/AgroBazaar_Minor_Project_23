@@ -1,12 +1,12 @@
 import './MarketPrice.css';
-function MarketPrice(){
-    return(
+function MarketPrice() {
+    return (
         <article className='market'>
-        <h3>Market Price</h3>
+            <h3>Market Price</h3>
             <div className=''>
-                
+
             </div>
-        
+
 
         </article>
     );

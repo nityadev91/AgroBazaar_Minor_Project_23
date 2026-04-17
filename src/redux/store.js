@@ -11,7 +11,7 @@ const persistConfig = {
   storage,
 };
 
-const rootReducer = combineReducers({ 
+const rootReducer = combineReducers({
   user: userSliceReducer,
   product: productSliceReducer,
 })

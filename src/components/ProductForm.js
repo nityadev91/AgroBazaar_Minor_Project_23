@@ -9,11 +9,11 @@ const CreateBook = (props) => {
   const navigate = useNavigate();
   const [product, setProduct] = useState({
     name: "",
-    description:"",
+    description: "",
     author: "",
     color: "",
     price: "",
-    image:"",
+    image: "",
   });
 
   const onChange = (e) => {
@@ -27,12 +27,12 @@ const CreateBook = (props) => {
       .post(`${process.env.BASE_URL}/api/vegs`, product)
       .then((res) => {
         setProduct({
-            name: "",
-            description:"",
-            author: "",
-            color: "",
-            price: "",
-            image:"",
+          name: "",
+          description: "",
+          author: "",
+          color: "",
+          price: "",
+          image: "",
         });
 
         // Push to /
@@ -114,17 +114,17 @@ const CreateBook = (props) => {
               </div>
 
               <div className='form-group'>
-              <input 
-                type="text" 
-                placeholder='Vegetable Image URL '
-                name="image" 
-                className='form-control'
-                value={product.image}
-                onChange={onChange}
+                <input
+                  type="text"
+                  placeholder='Vegetable Image URL '
+                  name="image"
+                  className='form-control'
+                  value={product.image}
+                  onChange={onChange}
                 // id="imageUpload" 
                 // accept="image/*"
-              />
-                </div>
+                />
+              </div>
 
 
               <input

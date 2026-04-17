@@ -55,14 +55,14 @@ const Login = () => {
 
   return (
     <div className="mx-auto mt-8 p-6 bg-white shadow-md rounded-md">
-      
+
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <img
           className="mx-auto h-12 w-auto"
           src={vegmart}
           alt="VegMart Logo"
         />
-          
+
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Sign in to your account
         </h2>
@@ -87,7 +87,7 @@ const Login = () => {
                 placeholder="Ener your Email address"
               />
             </div>
-            
+
           </div>
 
           <div>
@@ -114,7 +114,7 @@ const Login = () => {
                 placeholder="Ener your Password"
               />
             </div>
-            
+
           </div>
 
           <div>
@@ -125,7 +125,7 @@ const Login = () => {
             >
               Sign in
             </button>
-            <Toaster/>
+            <Toaster />
           </div>
         </form>
 
